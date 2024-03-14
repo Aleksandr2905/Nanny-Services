@@ -21,7 +21,7 @@ export const HomePage = () => {
   return (
     <Container>
       <Wrapper>
-        <Header backgroundColor="transparent" />
+        <Header />
         <TitleWrap>
           <Title>Make Life Easier for the Family:</Title>
           <Text>Find Babysitters Online for All Occasions</Text>

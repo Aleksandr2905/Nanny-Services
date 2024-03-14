@@ -3,14 +3,16 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
-  position: fixed;
+  position: absolute;
+  left: 0;
   justify-content: space-between;
   align-items: center;
   padding: 0 96px;
   width: 100%;
   height: 88px;
   border-bottom: 1px solid rgba(251, 251, 251, 0.4);
-  background-color: ${(props) => props.backgroundColor || "transparent"};
+  background-color: ${(props) =>
+    props.$backgroundColor ? "var(--background-color)" : "transparent"};
 `;
 
 export const Logo = styled.div`

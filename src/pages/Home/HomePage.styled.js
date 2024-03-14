@@ -4,7 +4,7 @@ import image from "../../assets/image/bg.jpg";
 export const Container = styled.div`
   padding: 32px;
   height: 100vh;
-  /* width: 100vw; */
+  width: 100%;
   position: relative;
 `;
 

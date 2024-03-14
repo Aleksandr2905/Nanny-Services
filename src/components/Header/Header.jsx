@@ -5,10 +5,7 @@ import { Logo, NavBtn, NavMenu, Wrapper } from "./Header.styled";
 export const Header = ({ backgroundColor }) => {
   const isLoggedIn = false;
   return (
-    <Wrapper
-      backgroundColor={backgroundColor}
-      style={{ textAlign: isLoggedIn ? "center" : "right" }}
-    >
+    <Wrapper $backgroundColor={backgroundColor}>
       <Logo>Nanny.Services</Logo>
       <NavMenu>
         <NavBtn to="/"> Home</NavBtn>
