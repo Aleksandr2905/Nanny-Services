@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import * as s from "./Registration.styled";
 import sprite from "../../assets/icons/sprite.svg";
+import { InputForm } from "../InputForm/InputForm";
 
 export const Registration = ({ onCloseModal }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -34,7 +35,7 @@ export const Registration = ({ onCloseModal }) => {
         need some information. Please provide us with the following information.
       </s.Text>
       <s.Forma onSubmit={handleSubmit(onSubmit)}>
-        <s.InputWrap>
+        {/* <s.InputWrap>
           <s.Input type="text" placeholder="Name" {...register("username")} />
           <s.ErrorText>{errors.username?.message}</s.ErrorText>
         </s.InputWrap>
@@ -66,7 +67,29 @@ export const Registration = ({ onCloseModal }) => {
             </s.Eyes>
           )}
           <s.ErrorText>{errors.password?.message}</s.ErrorText>
-        </s.InputWrap>
+        </s.InputWrap> */}
+        <InputForm
+          name="username"
+          type="text"
+          placeholder="Name"
+          register={register}
+          errors={errors}
+        />
+        <InputForm
+          name="email"
+          type="text"
+          placeholder="Email"
+          register={register}
+          errors={errors}
+        />
+        <InputForm
+          name="password"
+          type={showPassword ? "text" : "password"}
+          placeholder="Password"
+          register={register}
+          errors={errors}
+          onClick={togglePasswordVisibility}
+        />
         <s.Btn type="submit">Sign Up</s.Btn>
       </s.Forma>
     </s.Wrapper>
