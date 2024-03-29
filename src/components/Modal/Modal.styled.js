@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { variables } from "../../stylesheet/variables";
 
 export const Backdrop = styled.div`
-  background-color: rgba(11, 11, 11, 0.6);
+  background-color: ${variables.color.bgBackdrop};
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +16,7 @@ export const Backdrop = styled.div`
 
 export const Container = styled.div`
   position: relative;
-  background-color: #fbfbfb;
+  background-color: ${variables.color.bgSecondary};
   border-radius: 30px;
   z-index: 100;
 `;
@@ -31,7 +32,7 @@ export const BtnCloseModal = styled.button`
   padding: 0;
 
   & svg {
-    stroke: #11101c;
+    stroke: ${variables.color.textPrimary};
 
     /* &:hover {
       transition: transform 0.5s;

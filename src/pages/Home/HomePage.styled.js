@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import image from "../../assets/image/bg.jpg";
+import { variables } from "../../stylesheet/variables";
 
 export const Container = styled.div`
   padding: 32px;
@@ -15,7 +16,7 @@ export const Wrapper = styled.div`
   /* min-height: calc(100vh - 56px); */
   min-height: 100%;
   border-radius: 30px;
-  background-color: var(--background-color);
+  background-color: ${variables.color.accent};
 `;
 
 export const TitleWrap = styled.div`
@@ -27,50 +28,53 @@ flex-direction: column; */
 
 export const Title = styled.h1`
   margin-bottom: 28px;
+  font-family: ${variables.fonts.medium};
   font-size: 70px;
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: #fbfbfb;
+  color: ${variables.color.textMainPage};
 `;
 
 export const Text = styled.p`
+  font-family: ${variables.fonts.regular};
   font-size: 28px;
   font-weight: 400;
   line-height: 1.07;
   letter-spacing: -0.02em;
   margin-bottom: 64px;
-  color: #fbfbfb;
+  color: ${variables.color.textMainPage};
 `;
 export const Btn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 18px;
-  border: 1px solid rgba(251, 251, 251, 0.4);
+  border: 1px solid ${variables.color.borderBtn};
   border-radius: 30px;
   padding: 18px 50px;
+  font-family: ${variables.fonts.medium};
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.01em;
   background-color: transparent;
-  color: #fbfbfb;
+  color: ${variables.color.bgSecondary};
 
   &:hover {
     transition: all 0.3s;
-    background-color: #fbfbfb;
-    color: var(--background-color);
+    background-color: ${variables.color.bgSecondary};
+    color: ${variables.color.accent};
     svg {
       transition: transform 0.3s;
       transform: rotate(53deg);
-      fill: var(--background-color);
+      fill: ${variables.color.accent};
     }
   }
 `;
 
 export const IconArrow = styled.svg`
-  fill: #fbfbfb;
+  fill: ${variables.color.textMainPage};
 `;
 
 export const ImageBlock = styled.div`
@@ -96,7 +100,7 @@ export const InfoBlock = styled.div`
   height: 118px;
   padding: 32px;
   border-radius: 20px;
-  background-color: #fbfbfb;
+  background-color: ${variables.color.bgSecondary};
 `;
 
 export const IconWrap = styled.div`
@@ -106,20 +110,22 @@ export const IconWrap = styled.div`
   width: 54px;
   height: 54px;
   border-radius: 13px;
-  background: var(--background-color);
+  background: ${variables.color.accent};
 `;
 
 export const InfoBlockText = styled.p`
   margin-bottom: 6px;
+  font-family: ${variables.fonts.regular};
   font-size: 16px;
-  line-height: normal;
+  font-weight: 400;
   letter-spacing: -0.3px;
-  color: rgba(17, 16, 28, 0.5);
+  color: ${variables.color.textSecondary};
 `;
 
 export const InfoBlockNumber = styled.p`
+  font-family: ${variables.fonts.bold};
   font-size: 24px;
   font-weight: 700;
   line-height: normal;
-  color: #11101c;
+  color: ${variables.color.textPrimary};
 `;

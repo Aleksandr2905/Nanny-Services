@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import ReactDOM from "react-dom";
 import sprite from "../../assets/icons/sprite.svg";
-import { Backdrop, BtnCloseModal, Container } from "./Modal.styled";
+import * as s from "./Modal.styled";
 
 export const Modal = ({ isModalOpen, onCloseModal, children }) => {
   const modalPortal = document.getElementById("modal");
@@ -29,17 +29,18 @@ export const Modal = ({ isModalOpen, onCloseModal, children }) => {
   if (!isModalOpen || modalPortal === null) {
     return null;
   }
+
   return ReactDOM.createPortal(
-    <Backdrop onClick={onBackdropClick}>
-      <Container>
-        <BtnCloseModal type="button" onClick={onCloseModal}>
+    <s.Backdrop onClick={onBackdropClick}>
+      <s.Container>
+        <s.BtnCloseModal type="button" onClick={onCloseModal}>
           <svg width="20" height="20">
             <use href={`${sprite}#icon-x`} />
           </svg>
-        </BtnCloseModal>
+        </s.BtnCloseModal>
         {children}
-      </Container>
-    </Backdrop>,
+      </s.Container>
+    </s.Backdrop>,
     modalPortal
   );
 };

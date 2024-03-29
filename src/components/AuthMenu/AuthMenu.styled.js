@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { variables } from "../../stylesheet/variables";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -9,19 +10,20 @@ export const Wrapper = styled.div`
 `;
 
 export const Btn = styled.button`
-  border: 1px solid rgba(251, 251, 251, 0.4);
+  border: 1px solid ${variables.color.borderBtn};
   border-radius: 30px;
   padding: 14px 39px;
+  font-family: ${variables.fonts.medium};
   font-size: 16px;
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.01em;
-  transition: all 0.3s;
-  color: #fbfbfb;
+  transition: ${variables.animations.transition};
+  color: ${variables.color.textMainPage};
 
   &:hover {
-    background-color: #fbfbfb;
-    color: var(--background-color);
+    background-color: ${variables.color.textMainPage};
+    color: ${variables.color.accent};
   }
 
   /* &:focus {
@@ -35,5 +37,5 @@ export const LoginBtn = styled(Btn)`
 `;
 
 export const RegistrationBtn = styled(Btn)`
-  background-color: var(--background-color);
+  background-color: ${variables.color.accent};
 `;

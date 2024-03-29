@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { variables } from "../../stylesheet/variables";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -20,29 +21,31 @@ export const IconUser = styled.svg`
   height: 40px;
   padding: 8px;
   border-radius: 10px;
-  background-color: #fbfbfb;
+  background-color: ${variables.color.bgSecondary};
 
   & use {
-    fill: var(--background-color);
+    fill: ${variables.color.accent};
   }
 `;
 
 export const Name = styled.p`
+  font-family: ${variables.fonts.medium};
   font-style: 18px;
   font-weight: 500;
   line-height: 1.11;
   letter-spacing: -0.01em;
-  color: #fbfbfb;
+  color: ${variables.color.textMainPage};
 `;
 
 export const Btn = styled.button`
-  border: 1px solid rgba(251, 251, 251, 0.4);
+  border: 1px solid ${variables.color.borderBtn};
   border-radius: 30px;
   padding: 14px 39px;
+  font-family: ${variables.fonts.medium};
   font-size: 16px;
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.01em;
-  background-color: var(--background-color);
-  color: #fbfbfb;
+  background-color: ${variables.color.accent};
+  color: ${variables.color.textMainPage};
 `;

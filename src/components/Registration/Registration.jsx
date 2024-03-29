@@ -2,17 +2,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { registrationSchema } from "../../helpers/validation";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import {
-  Btn,
-  ErrorText,
-  Eyes,
-  Forma,
-  Input,
-  InputWrap,
-  Text,
-  Title,
-  Wrapper,
-} from "./Registration.styled";
+import * as s from "./Registration.styled";
 import sprite from "../../assets/icons/sprite.svg";
 
 export const Registration = ({ onCloseModal }) => {
@@ -37,48 +27,48 @@ export const Registration = ({ onCloseModal }) => {
   };
 
   return (
-    <Wrapper>
-      <Title>Registration</Title>
-      <Text>
+    <s.Wrapper>
+      <s.Title>Registration</s.Title>
+      <s.Text>
         Thank you for your interest in our platform! In order to register, we
         need some information. Please provide us with the following information.
-      </Text>
-      <Forma onSubmit={handleSubmit(onSubmit)}>
-        <InputWrap>
-          <Input type="text" placeholder="Name" {...register("username")} />
-          <ErrorText>{errors.username?.message}</ErrorText>
-        </InputWrap>
-        <InputWrap>
-          <Input type="text" placeholder="Email" {...register("email")} />
-          <ErrorText>{errors.email?.message}</ErrorText>
-        </InputWrap>
-        <InputWrap>
-          <Input
+      </s.Text>
+      <s.Forma onSubmit={handleSubmit(onSubmit)}>
+        <s.InputWrap>
+          <s.Input type="text" placeholder="Name" {...register("username")} />
+          <s.ErrorText>{errors.username?.message}</s.ErrorText>
+        </s.InputWrap>
+        <s.InputWrap>
+          <s.Input type="text" placeholder="Email" {...register("email")} />
+          <s.ErrorText>{errors.email?.message}</s.ErrorText>
+        </s.InputWrap>
+        <s.InputWrap>
+          <s.Input
             type={showPassword ? "text" : "password"}
             placeholder="Password"
             {...register("password")}
           />
           {showPassword ? (
-            <Eyes
+            <s.Eyes
               width="20"
               height="20"
               onClick={() => togglePasswordVisibility()}
             >
               <use href={`${sprite}#icon-eye`} />
-            </Eyes>
+            </s.Eyes>
           ) : (
-            <Eyes
+            <s.Eyes
               width="20"
               height="20"
               onClick={() => togglePasswordVisibility()}
             >
               <use href={`${sprite}#icon-eye-off`} />
-            </Eyes>
+            </s.Eyes>
           )}
-          <ErrorText>{errors.password?.message}</ErrorText>
-        </InputWrap>
-        <Btn type="submit">Sign Up</Btn>
-      </Forma>
-    </Wrapper>
+          <s.ErrorText>{errors.password?.message}</s.ErrorText>
+        </s.InputWrap>
+        <s.Btn type="submit">Sign Up</s.Btn>
+      </s.Forma>
+    </s.Wrapper>
   );
 };

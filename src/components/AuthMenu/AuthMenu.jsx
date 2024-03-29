@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Modal } from "../Modal/Modal";
-import { LoginBtn, RegistrationBtn, Wrapper } from "./AuthMenu.styled";
+import * as s from "./AuthMenu.styled";
 import { Registration } from "../Registration/Registration";
 import { Login } from "../Login/Login";
 
@@ -25,13 +25,13 @@ export const AuthMenu = () => {
   };
 
   return (
-    <Wrapper>
-      <LoginBtn type="button" onClick={openModalLogIn}>
+    <s.Wrapper>
+      <s.LoginBtn type="button" onClick={openModalLogIn}>
         Log In
-      </LoginBtn>
-      <RegistrationBtn type="button" onClick={openModalRegister}>
+      </s.LoginBtn>
+      <s.RegistrationBtn type="button" onClick={openModalRegister}>
         Registration
-      </RegistrationBtn>
+      </s.RegistrationBtn>
       <Modal
         onCloseModal={closeModalRegister}
         isModalOpen={modalIsOpenRegister}
@@ -41,6 +41,6 @@ export const AuthMenu = () => {
       <Modal onCloseModal={closeModalLogIn} isModalOpen={modalIsOpenLogIn}>
         <Login />
       </Modal>
-    </Wrapper>
+    </s.Wrapper>
   );
 };
