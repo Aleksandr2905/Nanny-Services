@@ -4,8 +4,14 @@ import { variables } from "../../stylesheet/variables";
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: row;
+  width: 533px;
+  /* gap: 8px; */
+`;
+
+export const BtnWrap = styled.div`
+  display: flex;
   gap: 8px;
 `;
 

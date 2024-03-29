@@ -1,51 +1,38 @@
 import { Header } from "../../components/Header/Header";
-import {
-  Btn,
-  Container,
-  IconArrow,
-  IconWrap,
-  ImageBlock,
-  InfoBlock,
-  InfoBlockNumber,
-  InfoBlockText,
-  Text,
-  Title,
-  TitleWrap,
-  Wrapper,
-} from "./HomePage.styled";
+import * as s from "./HomePage.styled";
 import sprite from "../../assets/icons/sprite.svg";
 import { useNavigate } from "react-router-dom";
 
 export const HomePage = () => {
   const navigate = useNavigate();
   return (
-    <Container>
-      <Wrapper>
+    <s.Container>
+      <s.Wrapper>
         <Header />
-        <TitleWrap>
-          <Title>Make Life Easier for the Family:</Title>
-          <Text>Find Babysitters Online for All Occasions</Text>
-          <Btn type="button" onClick={() => navigate("nannies")}>
+        <s.TitleWrap>
+          <s.Title>Make Life Easier for the Family:</s.Title>
+          <s.Text>Find Babysitters Online for All Occasions</s.Text>
+          <s.Btn type="button" onClick={() => navigate("nannies")}>
             Get started
-            <IconArrow width={18} height={18}>
+            <s.IconArrow width={18} height={18}>
               <use href={`${sprite}#icon-Arrow-up`} />
-            </IconArrow>
-          </Btn>
-        </TitleWrap>
-        <ImageBlock>
-          <InfoBlock>
-            <IconWrap>
-              <IconArrow width={30} height={30}>
+            </s.IconArrow>
+          </s.Btn>
+        </s.TitleWrap>
+        <s.ImageBlock>
+          <s.InfoBlock>
+            <s.IconWrap>
+              <s.IconArrow width={30} height={30}>
                 <use href={`${sprite}#icon-check`} />
-              </IconArrow>
-            </IconWrap>
+              </s.IconArrow>
+            </s.IconWrap>
             <div>
-              <InfoBlockText>Experienced nannies</InfoBlockText>
-              <InfoBlockNumber>15,000</InfoBlockNumber>
+              <s.InfoBlockText>Experienced nannies</s.InfoBlockText>
+              <s.InfoBlockNumber>15,000</s.InfoBlockNumber>
             </div>
-          </InfoBlock>
-        </ImageBlock>
-      </Wrapper>
-    </Container>
+          </s.InfoBlock>
+        </s.ImageBlock>
+      </s.Wrapper>
+    </s.Container>
   );
 };
