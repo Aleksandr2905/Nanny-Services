@@ -1,4 +1,5 @@
 import sprite from "../../assets/icons/sprite.svg";
+import * as s from "./InputForm.styled";
 
 export const InputForm = ({
   name,
@@ -10,28 +11,21 @@ export const InputForm = ({
   showPassword,
 }) => {
   return (
-    <div>
-      <input
+    <s.Wrapper>
+      <s.Input
         name={name}
         type={type}
         placeholder={placeholder}
         {...register(name)}
-        // $errors={!!errors[name]}
       />
-      <p>{errors[name]?.message}</p>
+      <s.ErrorText>{errors[name]?.message}</s.ErrorText>
       {name === "password" && (
-        <>
-          {showPassword ? (
-            <svg width="20" height="20" onClick={() => onClick()}>
-              <use href={`${sprite}#icon-eye`} />
-            </svg>
-          ) : (
-            <svg width="20" height="20" onClick={() => onClick()}>
-              <use href={`${sprite}#icon-eye-off`} />
-            </svg>
-          )}
-        </>
+        <s.Eyes width="20" height="20" onClick={onClick}>
+          <use
+            href={`${sprite}#${showPassword ? "icon-eye" : "icon-eye-off"}`}
+          />
+        </s.Eyes>
       )}
-    </div>
+    </s.Wrapper>
   );
 };

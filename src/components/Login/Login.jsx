@@ -3,7 +3,7 @@ import { loginSchema } from "../../helpers/validation";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import * as s from "../Registration/Registration.styled";
-import sprite from "../../assets/icons/sprite.svg";
+import { InputForm } from "../InputForm/InputForm";
 
 export const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -33,35 +33,22 @@ export const Login = () => {
         continue your babysitter search.
       </s.Text>
       <s.Forma onSubmit={onSubmit}>
-        <s.InputWrap>
-          <s.Input type="text" placeholder="Email" {...register("email")} />
-          <s.ErrorText>{errors.email?.message}</s.ErrorText>
-        </s.InputWrap>
-        <s.InputWrap>
-          <s.Input
-            type={showPassword ? "text" : "password"}
-            placeholder="Password"
-            {...register("password")}
-          />
-          {showPassword ? (
-            <s.Eyes
-              width="20"
-              height="20"
-              onClick={() => togglePasswordVisibility()}
-            >
-              <use href={`${sprite}#icon-eye`} />
-            </s.Eyes>
-          ) : (
-            <s.Eyes
-              width="20"
-              height="20"
-              onClick={() => togglePasswordVisibility()}
-            >
-              <use href={`${sprite}#icon-eye-off`} />
-            </s.Eyes>
-          )}
-          <s.ErrorText>{errors.password?.message}</s.ErrorText>
-        </s.InputWrap>
+        <InputForm
+          name="email"
+          type="text"
+          placeholder="Email"
+          register={register}
+          errors={errors}
+        />
+        <InputForm
+          name="password"
+          type={showPassword ? "text" : "password"}
+          placeholder="Password"
+          register={register}
+          errors={errors}
+          onClick={togglePasswordVisibility}
+          showPassword={showPassword}
+        />
         <s.Btn type="submit">Log In</s.Btn>
       </s.Forma>
     </s.Wrapper>

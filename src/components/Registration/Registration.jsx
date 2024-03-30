@@ -2,9 +2,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { registrationSchema } from "../../helpers/validation";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import * as s from "./Registration.styled";
-import sprite from "../../assets/icons/sprite.svg";
 import { InputForm } from "../InputForm/InputForm";
+import * as s from "./Registration.styled";
 
 export const Registration = ({ onCloseModal }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -24,7 +23,7 @@ export const Registration = ({ onCloseModal }) => {
   };
 
   const togglePasswordVisibility = () => {
-    setShowPassword((prevState) => !prevState);
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -35,39 +34,6 @@ export const Registration = ({ onCloseModal }) => {
         need some information. Please provide us with the following information.
       </s.Text>
       <s.Forma onSubmit={handleSubmit(onSubmit)}>
-        {/* <s.InputWrap>
-          <s.Input type="text" placeholder="Name" {...register("username")} />
-          <s.ErrorText>{errors.username?.message}</s.ErrorText>
-        </s.InputWrap>
-        <s.InputWrap>
-          <s.Input type="text" placeholder="Email" {...register("email")} />
-          <s.ErrorText>{errors.email?.message}</s.ErrorText>
-        </s.InputWrap>
-        <s.InputWrap>
-          <s.Input
-            type={showPassword ? "text" : "password"}
-            placeholder="Password"
-            {...register("password")}
-          />
-          {showPassword ? (
-            <s.Eyes
-              width="20"
-              height="20"
-              onClick={() => togglePasswordVisibility()}
-            >
-              <use href={`${sprite}#icon-eye`} />
-            </s.Eyes>
-          ) : (
-            <s.Eyes
-              width="20"
-              height="20"
-              onClick={() => togglePasswordVisibility()}
-            >
-              <use href={`${sprite}#icon-eye-off`} />
-            </s.Eyes>
-          )}
-          <s.ErrorText>{errors.password?.message}</s.ErrorText>
-        </s.InputWrap> */}
         <InputForm
           name="username"
           type="text"
@@ -89,6 +55,7 @@ export const Registration = ({ onCloseModal }) => {
           register={register}
           errors={errors}
           onClick={togglePasswordVisibility}
+          showPassword={showPassword}
         />
         <s.Btn type="submit">Sign Up</s.Btn>
       </s.Forma>
