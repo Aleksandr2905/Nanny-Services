@@ -9,6 +9,7 @@ export const variables = {
     bgSecondary: "#fbfbfb",
     bgBackdrop: "rgba(11, 11, 11, 0.6)",
     accent: "#f03f3b",
+    accentLight: "rgba(240, 63, 59, 0.2)",
   },
   fonts: {
     regular: "HelveticaNeue-400",

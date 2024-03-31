@@ -1,11 +1,11 @@
 import { Hourglass } from "react-loader-spinner";
+import { variables } from "../../stylesheet/variables";
 
 export const Loader = () => {
   return (
     <div
       style={{
         position: "fixed",
-        zIndex: 999,
         top: 0,
         left: 0,
         width: "100vw",
@@ -13,8 +13,8 @@ export const Loader = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        background: "rgba(0, 0, 0, 0.25)",
-        backdropFilter: "blur(3px)",
+        background: "rgba(0, 0, 0, 0.1)",
+        backdropFilter: "blur(5px)",
       }}
     >
       <Hourglass
@@ -24,7 +24,7 @@ export const Loader = () => {
         ariaLabel="hourglass-loading"
         wrapperStyle={{}}
         wrapperClass=""
-        colors={["var(--dark-blue)", "var(--light-blue-3)"]}
+        colors={[`${variables.color.accent}`, `${variables.color.accentLight}`]}
       />
     </div>
   );

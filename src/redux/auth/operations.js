@@ -70,7 +70,7 @@ export const logOut = createAsyncThunk(
     try {
       await signOut(auth);
     } catch (error) {
-      return rejectWithValue(ererror.messageror);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -79,7 +79,7 @@ export const refreshUser = createAsyncThunk(
   "auth/refreshToken",
   async (_, { rejectWithValue }) => {
     try {
-      const user = await new Promise((resolve, reject) => {
+      const user = await new Promise((resolve) => {
         onAuthStateChanged(auth, (user) => {
           resolve(user);
         });
