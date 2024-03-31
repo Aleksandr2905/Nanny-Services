@@ -8,6 +8,8 @@ import { refreshUser } from "./redux/auth/operations";
 import { useEffect } from "react";
 import { selectIsLoading } from "./redux/auth/selectors";
 import { Loader } from "./components/Loader/Loader";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -22,15 +24,18 @@ const App = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<HomePage />} />
-            <Route path="/nannies" element={<NanniesPage />} />
-            <Route path="/favorites" element={<FavoritesPage />} />
-            <Route path="*" element={<HomePage />} />
-          </Route>
-        </Routes>
+        <>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path="/nannies" element={<NanniesPage />} />
+              <Route path="/favorites" element={<FavoritesPage />} />
+              <Route path="*" element={<HomePage />} />
+            </Route>
+          </Routes>
+        </>
       )}
+      <ToastContainer position="top-center" autoClose={5000} />
     </>
   );
 };

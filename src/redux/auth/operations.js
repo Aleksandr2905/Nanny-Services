@@ -7,6 +7,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../../firebase/config";
+import { toast } from "react-toastify";
 
 export const registration = createAsyncThunk(
   "auth/signup",
@@ -23,18 +24,16 @@ export const registration = createAsyncThunk(
         await updateProfile(auth.currentUser, { displayName: username });
       }
 
-      if (!user) {
-        throw new Error("User not found");
-      }
-
       const data = {
         id: user.uid,
         username: user.displayName,
         email: user.email,
         token: user.refreshToken,
       };
+      toast.success(`${username}, successfully registered`);
       return data;
     } catch (error) {
+      toast.error("Email already");
       return rejectWithValue(error.message);
     }
   }
@@ -47,10 +46,6 @@ export const logIn = createAsyncThunk(
       const { email, password } = userData;
       const { user } = await signInWithEmailAndPassword(auth, email, password);
 
-      if (!user) {
-        throw new Error("User not found");
-      }
-
       const data = {
         id: user.uid,
         username: user.displayName,
@@ -59,6 +54,7 @@ export const logIn = createAsyncThunk(
       };
       return data;
     } catch (error) {
+      toast.error("Email or password is incorrect");
       return rejectWithValue(error.message);
     }
   }
