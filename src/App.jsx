@@ -3,6 +3,7 @@ import { HomePage } from "./pages/Home/HomePage";
 import { NanniesPage } from "./pages/Nannies/NanniesPage";
 import { FavoritesPage } from "./pages/Favorites/FavoritesPage";
 import { Layout } from "./components/Layout/Layout";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 const App = () => {
   return (
@@ -10,7 +11,14 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="/nannies" element={<NanniesPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route
+          path="/favorites"
+          element={
+            <PrivateRoute>
+              <FavoritesPage />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>
