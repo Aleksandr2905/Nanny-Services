@@ -7,18 +7,20 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase/config";
 
-export const signUp = createAsyncThunk(
+export const registration = createAsyncThunk(
   "auth/signup",
   async (userData, { rejectWithValue }) => {
     try {
       const { email, password, username } = userData;
-      const { user } = await createUserWithEmailAndPassword(
+      const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
         password
       );
 
-      await updateProfile(user, { displayName: username });
+      await updateProfile(userCredential.user, { displayName: username });
+
+      const user = auth.currentUser;
 
       const data = {
         user: {

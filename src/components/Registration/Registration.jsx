@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { InputForm } from "../InputForm/InputForm";
 import * as s from "./Registration.styled";
+import { useDispatch } from "react-redux";
+import { registration } from "../../redux/operations";
 
 export const Registration = ({ onCloseModal }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,9 +17,11 @@ export const Registration = ({ onCloseModal }) => {
   } = useForm({
     resolver: yupResolver(registrationSchema),
   });
+  const dispatch = useDispatch();
 
   const onSubmit = (userData) => {
     console.log(userData);
+    dispatch(registration(userData));
     reset();
     onCloseModal();
   };

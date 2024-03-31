@@ -1,9 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { registration } from "./operations";
 
 const initialState = {
   user: {
+    id: "",
     username: "",
     email: "",
+    token: "",
   },
   isLoading: false,
   isAuth: false,
@@ -13,13 +16,12 @@ const initialState = {
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {
-    setUser: (state, action) => {
-      state.user.username = action.payload.user.username;
-      state.user.email = action.payload.user.email;
+  extraReducers: (builder) => {
+    builder.addCase(registration.fulfilled, (state, action) => {
+      state.user = action.payload;
       state.isLoading = false;
       state.isAuth = true;
-    },
+    });
   },
 });
 
