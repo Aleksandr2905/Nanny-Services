@@ -4,8 +4,10 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import * as s from "../Registration/Registration.styled";
 import { InputForm } from "../InputForm/InputForm";
+import { useDispatch } from "react-redux";
+import { logIn } from "../../redux/auth/operations";
 
-export const Login = () => {
+export const Login = ({ onCloseModal }) => {
   const [showPassword, setShowPassword] = useState(false);
   const {
     register,
@@ -15,11 +17,13 @@ export const Login = () => {
   } = useForm({
     resolver: yupResolver(loginSchema),
   });
+  const dispatch = useDispatch();
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
+  const onSubmit = (data) => {
+    dispatch(logIn(data));
     reset();
-  });
+    onCloseModal();
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
@@ -32,7 +36,7 @@ export const Login = () => {
         Welcome back! Please enter your credentials to access your account and
         continue your babysitter search.
       </s.Text>
-      <s.Forma onSubmit={onSubmit}>
+      <s.Forma onSubmit={handleSubmit(onSubmit)}>
         <InputForm
           name="email"
           type="text"

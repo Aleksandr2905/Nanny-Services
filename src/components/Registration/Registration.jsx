@@ -5,7 +5,7 @@ import { useState } from "react";
 import { InputForm } from "../InputForm/InputForm";
 import * as s from "./Registration.styled";
 import { useDispatch } from "react-redux";
-import { registration } from "../../redux/operations";
+import { registration } from "../../redux/auth/operations";
 
 export const Registration = ({ onCloseModal }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -19,9 +19,8 @@ export const Registration = ({ onCloseModal }) => {
   });
   const dispatch = useDispatch();
 
-  const onSubmit = (userData) => {
-    console.log(userData);
-    dispatch(registration(userData));
+  const onSubmit = (data) => {
+    dispatch(registration(data));
     reset();
     onCloseModal();
   };

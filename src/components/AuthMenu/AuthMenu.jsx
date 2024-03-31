@@ -44,7 +44,7 @@ export const AuthMenu = () => {
         <Registration onCloseModal={closeModalRegister} />
       </Modal>
       <Modal onCloseModal={closeModalLogIn} isModalOpen={modalIsOpenLogIn}>
-        <Login />
+        <Login onCloseModal={closeModalLogIn} />
       </Modal>
     </s.Wrapper>
   );

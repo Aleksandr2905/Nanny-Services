@@ -1,17 +1,28 @@
+import { useDispatch, useSelector } from "react-redux";
 import sprite from "../../assets/icons/sprite.svg";
-import { Btn, IconUser, Name, WrappName, Wrapper } from "./UserMenu.styled";
+import * as s from "./UserMenu.styled";
+import { selectUser } from "../../redux/auth/selectors";
+import { logOut } from "../../redux/auth/operations";
 
 export const UserMenu = () => {
-  const name = "Ilona";
+  const { username } = useSelector(selectUser);
+  const dispatch = useDispatch();
+
   return (
-    <Wrapper>
-      <WrappName>
-        <IconUser width={24} height={24}>
+    <s.Wrapper>
+      <s.WrappName>
+        <s.IconUser width={24} height={24}>
           <use href={`${sprite}#icon-user`} />
-        </IconUser>
-        <Name>{name}</Name>
-      </WrappName>
-      <Btn type="button">Log out</Btn>
-    </Wrapper>
+        </s.IconUser>
+        <s.Name>{username}</s.Name>
+      </s.WrappName>
+      <s.Btn
+        onClick={() => {
+          dispatch(logOut());
+        }}
+      >
+        Log out
+      </s.Btn>
+    </s.Wrapper>
   );
 };
