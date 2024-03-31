@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../../firebase/config";
 
@@ -34,7 +35,7 @@ export const registration = createAsyncThunk(
       };
       return data;
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -58,7 +59,7 @@ export const logIn = createAsyncThunk(
       };
       return data;
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -69,7 +70,34 @@ export const logOut = createAsyncThunk(
     try {
       await signOut(auth);
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(ererror.messageror);
+    }
+  }
+);
+
+export const refreshUser = createAsyncThunk(
+  "auth/refreshToken",
+  async (_, { rejectWithValue }) => {
+    try {
+      const user = await new Promise((resolve, reject) => {
+        onAuthStateChanged(auth, (user) => {
+          resolve(user);
+        });
+      });
+
+      if (user) {
+        const userData = {
+          id: user.uid,
+          username: user.displayName,
+          email: user.email,
+          token: user.refreshToken,
+        };
+        return userData;
+      } else {
+        throw new Error("User not found");
+      }
+    } catch (error) {
+      return rejectWithValue(error.message);
     }
   }
 );

@@ -3,8 +3,16 @@ import { HomePage } from "./pages/Home/HomePage";
 import { NanniesPage } from "./pages/Nannies/NanniesPage";
 import { FavoritesPage } from "./pages/Favorites/FavoritesPage";
 import { Layout } from "./components/Layout/Layout";
+import { useDispatch } from "react-redux";
+import { refreshUser } from "./redux/auth/operations";
+import { useEffect } from "react";
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
