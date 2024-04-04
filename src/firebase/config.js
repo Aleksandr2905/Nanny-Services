@@ -3,18 +3,8 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-// const {
-//   VITE_FIREBASE_API_KEY,
-//   VITE_AUTH_DOMAIN,
-//   VITE_DATABASE_URL,
-//   VITE_PROJECT_ID,
-//   VITE_STORAGE_BUCKET,
-//   VITE_MESSAGING_SENDER_ID,
-//   VITE_APP_ID,
-// } = import.meta.env;
-
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  apiKey: "AIzaSyCLHUUo4322dJgd4kpVNHcE7eJHi4IhKZw",
   authDomain: "nanny-services-afa99.firebaseapp.com",
   databaseURL:
     "https://nanny-services-afa99-default-rtdb.europe-west1.firebasedatabase.app",
