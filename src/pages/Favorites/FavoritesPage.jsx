@@ -12,7 +12,7 @@ export const FavoritesPage = () => {
 
   useEffect(() => {
     if (!isAuth) {
-      navigation(location.pathname ?? "/");
+      navigation("/" && location.pathname);
     }
   }, [isAuth, navigation]);
 

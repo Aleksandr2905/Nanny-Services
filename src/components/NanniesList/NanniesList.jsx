@@ -8,7 +8,6 @@ import { setCurrentPage } from "../../redux/nannies/reducer";
 export const NanniesList = () => {
   const dispatch = useDispatch();
   const filterNannies = useSelector(sortNannies);
-  console.log(filterNannies);
 
   return (
     <>
