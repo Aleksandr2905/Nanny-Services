@@ -10,14 +10,18 @@ import { selectIsLoading } from "./redux/auth/selectors";
 import { Loader } from "./components/Loader/Loader";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { getNannies } from "./redux/nannies/operations";
+import { selectCurrentPage } from "./redux/nannies/selectors";
 
 const App = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
+  const currentPage = useSelector(selectCurrentPage);
 
   useEffect(() => {
     dispatch(refreshUser());
-  }, [dispatch]);
+    dispatch(getNannies({ currentPage }));
+  }, [dispatch, currentPage]);
 
   return (
     <>

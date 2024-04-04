@@ -15,6 +15,7 @@ export const Login = ({ onCloseModal }) => {
     formState: { errors },
     reset,
   } = useForm({
+    mode: "onChange",
     resolver: yupResolver(loginSchema),
   });
   const dispatch = useDispatch();

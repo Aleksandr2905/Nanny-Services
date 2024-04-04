@@ -3,6 +3,7 @@ import { Header } from "../../components/Header/Header";
 import { selectIsAuth } from "../../redux/auth/selectors";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { FavoritesList } from "../../components/FavoritesList/FavoritesList";
 
 export const FavoritesPage = () => {
   const navigation = useNavigate();
@@ -11,14 +12,14 @@ export const FavoritesPage = () => {
 
   useEffect(() => {
     if (!isAuth) {
-      navigation(location.state ?? "/");
+      navigation(location.pathname ?? "/");
     }
   }, [isAuth, navigation]);
 
   return (
     <div>
       <Header backgroundColor />
-      FavoritesPage
+      <FavoritesList />
     </div>
   );
 };

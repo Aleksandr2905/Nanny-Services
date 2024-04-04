@@ -14,7 +14,7 @@ import { getStorage } from "firebase/storage";
 // } = import.meta.env;
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCLHUUo4322dJgd4kpVNHcE7eJHi4IhKZw",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "nanny-services-afa99.firebaseapp.com",
   databaseURL:
     "https://nanny-services-afa99-default-rtdb.europe-west1.firebasedatabase.app",

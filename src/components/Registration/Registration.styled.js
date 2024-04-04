@@ -36,12 +36,14 @@ export const Btn = styled.button`
   padding: 16px;
   margin-top: 22px;
   height: 52px;
+  outline: none;
   border: none;
   font-family: ${variables.fonts.medium};
   font-size: 16px;
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.01em;
+  transition: ${variables.animations.transition};
   color: ${variables.color.textMainPage};
   background-color: ${variables.color.accent};
 

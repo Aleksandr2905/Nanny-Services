@@ -15,6 +15,7 @@ export const Registration = ({ onCloseModal }) => {
     formState: { errors },
     reset,
   } = useForm({
+    mode: "onChange",
     resolver: yupResolver(registrationSchema),
   });
   const dispatch = useDispatch();

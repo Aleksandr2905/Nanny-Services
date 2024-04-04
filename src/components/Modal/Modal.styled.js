@@ -6,16 +6,17 @@ export const Backdrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   z-index: 99;
+  overflow-y: auto;
 `;
 
 export const Container = styled.div`
-  position: relative;
+  position: absolute;
   background-color: ${variables.color.bgSecondary};
   border-radius: 30px;
   z-index: 100;

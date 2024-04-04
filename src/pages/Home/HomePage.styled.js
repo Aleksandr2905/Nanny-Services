@@ -13,15 +13,12 @@ export const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
-  /* min-height: calc(100vh - 56px); */
   min-height: 100%;
   border-radius: 30px;
   background-color: ${variables.color.accent};
 `;
 
 export const TitleWrap = styled.div`
-  /* display: flex;
-flex-direction: column; */
   max-width: 517px;
   margin: auto;
 `;
@@ -78,7 +75,6 @@ export const IconArrow = styled.svg`
 `;
 
 export const ImageBlock = styled.div`
-  /* position: relative; */
   background-image: url(${image});
   background-position: center;
   background-repeat: no-repeat;
