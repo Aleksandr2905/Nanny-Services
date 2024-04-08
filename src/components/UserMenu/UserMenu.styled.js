@@ -46,6 +46,12 @@ export const Btn = styled.button`
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.01em;
+  transition: ${variables.animations.transition};
   background-color: ${variables.color.accent};
   color: ${variables.color.textMainPage};
+
+  &:hover {
+    background-color: ${variables.color.textMainPage};
+    color: ${variables.color.accent};
+  }
 `;

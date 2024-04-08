@@ -48,6 +48,7 @@ export const customStyles = {
       ? `${variables.color.textPrimary}`
       : `${variables.color.textSelect}`,
     "&:hover": {
+      cursor: "pointer",
       color: `${variables.color.textPrimary}`,
     },
   }),

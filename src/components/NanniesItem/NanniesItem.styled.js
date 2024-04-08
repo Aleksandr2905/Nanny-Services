@@ -125,6 +125,10 @@ export const BtnHeart = styled.button`
     fill: none;
     stroke: ${variables.color.textPrimary};
   }
+
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 
 export const DescribeList = styled.ul`
@@ -180,5 +184,10 @@ export const BtnReadMore = styled.button`
   outline: none;
   border: none;
   background-color: transparent;
+  transition: ${variables.animations.transition};
   color: ${variables.color.textPrimary};
+
+  &:hover {
+    color: ${variables.color.accent};
+  }
 `;

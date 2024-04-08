@@ -31,11 +31,6 @@ export const Btn = styled.button`
     background-color: ${variables.color.textMainPage};
     color: ${variables.color.accent};
   }
-
-  /* &:focus {
-   border: 1px solid rgba(251, 251, 251, 0.4);
-   outline: none;
-} */
 `;
 
 export const LoginBtn = styled(Btn)`

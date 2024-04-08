@@ -50,6 +50,7 @@ export const customStyles = ({ error }) => ({
       ? `${variables.color.textPrimary}`
       : `${variables.color.textSelect}`,
     "&:hover": {
+      cursor: "pointer",
       color: `${variables.color.textPrimary}`,
     },
     width: "max-content",
