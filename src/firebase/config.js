@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  apiKey: "AIzaSyBMZiIh-o_C8kvn2LVfX_HtHFXJqVrxa9w",
   authDomain: "nanny-services-430c5.firebaseapp.com",
   databaseURL:
     "https://nanny-services-430c5-default-rtdb.europe-west1.firebasedatabase.app",
