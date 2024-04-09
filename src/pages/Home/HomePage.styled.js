@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import image from "../../assets/image/bg.jpg";
+import image2x from "../../assets/image/bg@2x.jpg";
 import { variables } from "../../stylesheet/variables";
 
 export const Container = styled.div`
@@ -82,6 +83,13 @@ export const ImageBlock = styled.div`
   border-radius: 0 30px 30px 0;
   width: 50%;
   min-height: 100%;
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(${image2x});
+  }
 `;
 
 export const InfoBlock = styled.div`
