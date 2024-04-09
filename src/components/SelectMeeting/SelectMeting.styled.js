@@ -14,18 +14,20 @@ export const customStyles = ({ error }) => ({
     color: `${variables.color.textPrimary}`,
     fontFamily: `${variables.fonts.regular}`,
     fontSize: "16px",
+    cursor: "pointer",
+    boxShadow: "none",
     fontWeight: "400",
     lineHeight: "1.25",
     transition: `${variables.animations.transition}`,
     padding: "10px 18px",
 
-    input: {
-      display: "none",
-    },
-
     svg: {
       cursor: "pointer",
       color: `${variables.color.textPrimary}`,
+    },
+
+    "&:focus": {
+      border: `1px solid ${variables.color.textSecondary}`,
     },
 
     "&:hover": {

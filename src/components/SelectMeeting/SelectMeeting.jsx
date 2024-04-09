@@ -37,6 +37,7 @@ export const SelectMeeting = forwardRef(
           onBlur={onBlur}
           name={name}
           isDisabled={disabled}
+          isSearchable={false}
           options={optionsMeeting}
           placeholder={"00 : 00"}
           styles={customStyles({ error: $error })}

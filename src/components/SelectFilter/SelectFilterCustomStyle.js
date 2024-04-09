@@ -12,6 +12,8 @@ export const customStyles = {
     width: "226px",
     height: "48px",
     border: "none",
+    boxShadow: "none",
+    cursor: "pointer",
     borderRadius: "14px",
     background: `${variables.color.accent}`,
     fontFamily: `${variables.fonts.medium}`,
@@ -19,9 +21,9 @@ export const customStyles = {
     fontWeight: "500",
     lineHeight: "1.11",
     transition: `${variables.animations.transition}`,
-
-    input: {
-      display: "none",
+    "&, &:is(:hover, :focus)": {
+      outline: "none",
+      border: "none",
     },
 
     svg: {

@@ -29,6 +29,7 @@ export const SelectFilter = ({ typeSelect }) => {
         options={options}
         styles={customStyles}
         value={selectedOption}
+        isSearchable={false}
         onChange={handleChange}
       />
     </s.Wrapper>
