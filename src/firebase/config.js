@@ -5,13 +5,12 @@ import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: "nanny-services-430c5.firebaseapp.com",
-  databaseURL:
-    "https://nanny-services-430c5-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "nanny-services-430c5",
-  storageBucket: "nanny-services-430c5.appspot.com",
-  messagingSenderId: "43575755399",
-  appId: "1:43575755399:web:a07127790fc253221f6e22",
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_DATABASE_URL,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
