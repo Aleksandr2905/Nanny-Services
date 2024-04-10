@@ -20,19 +20,19 @@ export const HomePage = () => {
               </s.IconArrow>
             </s.Btn>
           </s.TitleWrap>
-          <s.ImageBlock>
-            <s.InfoBlock>
-              <s.IconWrap>
-                <s.IconArrow width={30} height={30}>
-                  <use href={`${sprite}#icon-check`} />
-                </s.IconArrow>
-              </s.IconWrap>
-              <div>
-                <s.InfoBlockText>Experienced nannies</s.InfoBlockText>
-                <s.InfoBlockNumber>15,000</s.InfoBlockNumber>
-              </div>
-            </s.InfoBlock>
-          </s.ImageBlock>
+          {/* <s.ImageBlock> */}
+          <s.InfoBlock>
+            <s.IconWrap>
+              <s.IconArrow width={30} height={30}>
+                <use href={`${sprite}#icon-check`} />
+              </s.IconArrow>
+            </s.IconWrap>
+            <div>
+              <s.InfoBlockText>Experienced nannies</s.InfoBlockText>
+              <s.InfoBlockNumber>15,000</s.InfoBlockNumber>
+            </div>
+          </s.InfoBlock>
+          {/* </s.ImageBlock> */}
         </s.Wrapper>
       </s.Container>
     </>

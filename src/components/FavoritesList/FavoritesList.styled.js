@@ -10,14 +10,10 @@ export const Wrapper = styled.ul`
 
 export const ImgWrap = styled.div`
   display: flex;
-  /* width: 100vw; */
   height: 100vh;
 `;
 
 export const Img = styled.img`
-  /* display: block;
-  width: 100%;
-  height: 100%; */
   margin: auto;
 
   @media screen and (min-width: 768px) {

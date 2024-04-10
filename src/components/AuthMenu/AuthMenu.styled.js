@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   width: 100%;
-  /* gap: 8px; */
 
   @media screen and (min-width: 768px) {
     width: 533px;

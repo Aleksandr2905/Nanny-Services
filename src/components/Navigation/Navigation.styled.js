@@ -5,7 +5,6 @@ import { variables } from "../../stylesheet/variables";
 export const NavMenu = styled.div`
   display: flex;
   margin: auto;
-  /* gap: 26px; */
 
   @media screen and (min-width: 768px) {
     gap: 26px;
