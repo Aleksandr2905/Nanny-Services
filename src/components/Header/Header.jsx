@@ -10,16 +10,18 @@ export const Header = ({ backgroundColor }) => {
 
   return (
     <s.Wrapper $backgroundColor={backgroundColor}>
-      <s.Logo>Nanny.Services</s.Logo>
+      <s.Container>
+        <s.Logo>Nanny.Services</s.Logo>
 
-      {isAuth ? (
-        <>
-          <Navigation />
-          <UserMenu />
-        </>
-      ) : (
-        <AuthMenu />
-      )}
+        {isAuth ? (
+          <>
+            <Navigation />
+            <UserMenu />
+          </>
+        ) : (
+          <AuthMenu />
+        )}
+      </s.Container>
     </s.Wrapper>
   );
 };

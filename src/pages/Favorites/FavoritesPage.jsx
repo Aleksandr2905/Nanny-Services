@@ -4,6 +4,7 @@ import { selectIsAuth } from "../../redux/auth/selectors";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { FavoritesList } from "../../components/FavoritesList/FavoritesList";
+import * as s from "../Nannies/NanniesPage.styled";
 
 export const FavoritesPage = () => {
   const navigation = useNavigate();
@@ -16,9 +17,11 @@ export const FavoritesPage = () => {
   }, [isAuth, navigation]);
 
   return (
-    <div>
-      <Header backgroundColor />
-      <FavoritesList />
-    </div>
+    <s.Wrapper>
+      <s.Container>
+        <Header backgroundColor />
+        <FavoritesList />
+      </s.Container>
+    </s.Wrapper>
   );
 };

@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 152px 0 32px 128px;
+  padding: 152px 0 32px 0;
 `;
 
 export const Title = styled.p`

@@ -3,14 +3,19 @@ import { variables } from "../../stylesheet/variables";
 
 export const ItemWrapper = styled.div`
   display: flex;
+  position: relative;
+  flex-wrap: wrap;
   align-items: start;
   justify-content: start;
   gap: 24px;
   max-width: 1184px;
   padding: 24px;
   border-radius: 24px;
-
   background: ${variables.color.bgSecondary};
+
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
 `;
 
 export const ImgWrap = styled.div`
@@ -45,8 +50,13 @@ export const Descriptions = styled.div`
 
 export const UpperBlock = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 export const NameWrap = styled.div`
@@ -73,9 +83,16 @@ export const Name = styled.p`
 
 export const UpperRight = styled.div`
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 12px;
   width: 100%;
+
+  @media screen and (min-width: 768px) {
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0;
+  }
 `;
 
 export const Wrap = styled.div`
@@ -113,6 +130,9 @@ export const BtnHeart = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 24px;
+  right: 24px;
   padding: 0;
   width: 24px;
   height: 24px;
@@ -128,6 +148,12 @@ export const BtnHeart = styled.button`
 
   &:hover {
     transform: scale(1.2);
+  }
+
+  @media screen and (min-width: 768px) {
+    position: relative;
+    top: 0;
+    right: 0;
   }
 `;
 
