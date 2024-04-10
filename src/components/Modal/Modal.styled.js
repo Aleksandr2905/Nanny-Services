@@ -19,7 +19,6 @@ export const Container = styled.div`
   position: absolute;
   background-color: ${variables.color.bgSecondary};
   border-radius: 30px;
-  margin-top: 96px;
   z-index: 100;
 `;
 
