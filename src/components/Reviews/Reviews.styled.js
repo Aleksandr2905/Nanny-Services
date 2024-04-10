@@ -76,7 +76,7 @@ export const Comment = styled.p`
 
 export const Button = styled.button`
   border-radius: 30px;
-  padding: 14px 28px;
+  padding: 14px 0;
   width: 215px;
   height: 48px;
   margin-top: 37px;
