@@ -4,7 +4,12 @@ import { variables } from "../../stylesheet/variables";
 
 export const NavMenu = styled.div`
   display: flex;
-  gap: 26px;
+  margin: auto;
+  /* gap: 26px; */
+
+  @media screen and (min-width: 768px) {
+    gap: 26px;
+  }
 `;
 
 export const NavBtn = styled(NavLink)`

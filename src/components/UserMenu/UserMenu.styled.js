@@ -40,7 +40,7 @@ export const Name = styled.p`
 export const Btn = styled.button`
   border: 1px solid ${variables.color.borderBtn};
   border-radius: 30px;
-  padding: 14px 39px;
+  padding: 14px;
   font-family: ${variables.fonts.medium};
   font-size: 16px;
   font-weight: 500;
@@ -53,5 +53,9 @@ export const Btn = styled.button`
   &:hover {
     background-color: ${variables.color.textMainPage};
     color: ${variables.color.accent};
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 14px 39px;
   }
 `;

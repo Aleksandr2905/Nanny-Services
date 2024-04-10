@@ -4,10 +4,17 @@ import { variables } from "../../stylesheet/variables";
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   flex-direction: row;
-  width: 533px;
+  width: 100%;
   /* gap: 8px; */
+
+  @media screen and (min-width: 768px) {
+    width: 533px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 `;
 
 export const BtnWrap = styled.div`
@@ -18,7 +25,7 @@ export const BtnWrap = styled.div`
 export const Btn = styled.button`
   border: 1px solid ${variables.color.borderBtn};
   border-radius: 30px;
-  padding: 14px 39px;
+  padding: 14px;
   font-family: ${variables.fonts.medium};
   font-size: 16px;
   font-weight: 500;
@@ -30,6 +37,10 @@ export const Btn = styled.button`
   &:hover {
     background-color: ${variables.color.textMainPage};
     color: ${variables.color.accent};
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 14px 39px;
   }
 `;
 

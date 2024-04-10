@@ -6,7 +6,7 @@ export const NanniesPage = () => {
   return (
     <s.Wrapper>
       <s.Container>
-        {/* <Header backgroundColor /> */}
+        <Header backgroundColor />
         <NanniesList />
       </s.Container>
     </s.Wrapper>

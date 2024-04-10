@@ -20,13 +20,21 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   display: flex;
   /* position: absolute; */
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   /* padding: 0 32px; */
-  margin: auto;
+  margin: 8px auto;
   max-width: 1184px;
-  height: 88px;
+  height: 100%;
   /* border-bottom: 1px solid ${variables.color.borderBtn}; */
+
+  @media screen and (min-width: 768px) {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height: 88px;
+    margin: auto;
+  }
 `;
 
 export const Logo = styled.div`
