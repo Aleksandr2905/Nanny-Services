@@ -9,13 +9,11 @@ export const Container = styled.div`
   max-width: 1440px;
   margin: 0 auto;
   position: relative;
-  /* background-color: ${variables.color.bgPrimary}; */
 `;
 
 export const Wrapper = styled.div`
   position: relative;
   display: flex;
-  /* justify-content: space-between; */
   border-radius: 30px;
   overflow: hidden;
   background-color: ${variables.color.accent};
@@ -24,7 +22,6 @@ export const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 30px;
-  /* width: 50%; */
   min-height: 100%;
 
   @media (min-device-pixel-ratio: 2),
@@ -112,23 +109,6 @@ export const IconArrow = styled.svg`
   fill: ${variables.color.textMainPage};
 `;
 
-export const ImageBlock = styled.div`
-  /* background-image: url(${image});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 0 30px 30px 0;
-  width: 50%;
-  min-height: 100%;
-
-  @media (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image: url(${image2x});
-  } */
-`;
-
 export const InfoBlock = styled.div`
   position: absolute;
   bottom: 20px;
@@ -137,8 +117,6 @@ export const InfoBlock = styled.div`
   gap: 16px;
   justify-content: center;
   align-items: center;
-  /* width: 100%;
-  height: 100%; */
   padding: 16px;
   border-radius: 20px;
   background-color: ${variables.color.bgSecondary};

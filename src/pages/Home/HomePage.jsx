@@ -20,7 +20,6 @@ export const HomePage = () => {
               </s.IconArrow>
             </s.Btn>
           </s.TitleWrap>
-          {/* <s.ImageBlock> */}
           <s.InfoBlock>
             <s.IconWrap>
               <s.IconArrow width={30} height={30}>
@@ -32,7 +31,6 @@ export const HomePage = () => {
               <s.InfoBlockNumber>15,000</s.InfoBlockNumber>
             </div>
           </s.InfoBlock>
-          {/* </s.ImageBlock> */}
         </s.Wrapper>
       </s.Container>
     </>

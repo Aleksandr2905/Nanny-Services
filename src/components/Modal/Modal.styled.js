@@ -9,7 +9,7 @@ export const Backdrop = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
   z-index: 99;
   overflow-y: auto;
@@ -19,6 +19,7 @@ export const Container = styled.div`
   position: absolute;
   background-color: ${variables.color.bgSecondary};
   border-radius: 30px;
+  margin-top: 96px;
   z-index: 100;
 `;
 
